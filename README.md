@@ -86,6 +86,6 @@ netstat -antp
 ```
 ![image-20230725205426222](./pictures/image-20230725205426222.png)
 
-写了一个服务端`ChatServer.cpp`和客户端程序`ChatClient.cpp`，编译后会在`/bin`目录下生成两个可执行文件`ChatClient`和`ChatServer`，按照`nginx`配置的`ChatServer`的IP和Port进行运行即可启动ChatServer。
+写了一个服务端`ChatServer.cpp`和客户端程序`ChatClient.cpp`，编译后会在`/bin`目录下生成两个可执行文件`ChatClient`和`ChatServer`，按照`nginx`配置的`ChatServer`的`IP`和`Port`进行运行即可启动ChatServer。
 ![image-20230724165625087](./pictures/image-20230724165625087.png)
 
