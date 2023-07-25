@@ -1,7 +1,52 @@
 # ChatServer-based-on-NginxTcpLoadBalance-RedisPubSub
 A cluster chat server based on Ngnix TCP load balancing and Redis publish subscriptions.
+# 项目内容：
 
+## 技术栈：
+
+Json序列化和反序列化、muduo网络库开发、nginx（源码编译安装和环境部署、tcp负载均衡器配置）、redis（redis缓存服务器编程实践、基于发布-订阅的服务器中间件redis消息队列编程实现跨服务器通信）、MySQL数据库编程、CMake构建编译环境、聊天功能的基本实现。
+
+## 项目需求：
+
+1. 客户端新用户注册
+2. 客户端用户登录
+3. 添加好友和添加群组
+4. 好友聊天
+5. 群组聊天
+6. 离线消息
+7. nginx配置tcp负载均衡
+8. redis支持的客户端跨服务器通信
 ![](./pictures/Cluster_redis_pub-sub.png)
+## 项目目标：
+
+1. 掌握服务器的网络I/O模块，业务模块，数据模块分层的设计思想\
+2. 掌握C++ muduo网络库的编程以及实现原理
+3. 掌握Json的编程应用
+4. 掌握nginx配置部署tcp负载均衡器的应用以及原理
+5. 掌握服务器中间件的应用场景和基于发布-订阅的redis编程实践以及应用原理
+6. 掌握CMake构建自动化编译环境
+7. 掌握Github管理项目
+
+## 开发环境：
+
+1. 安装Json开发库：直接使用`json.hpp`头文件即可。
+
+2. 安装boost + CMake + muduo网络库开发环境：
+
+   [muduo库源码编译安装和环境搭建、编程，参考本人写的另一个博客。](https://blog.csdn.net/qq_44599368/article/details/131833423?spm=1001.2014.3001.5501)
+
+3. 安装redis环境：[redis安装和环境搭建、编程，参考本人写的另一个博客](https://blog.csdn.net/qq_44599368/article/details/131773602?spm=1001.2014.3001.5501)
+
+4. 安装mysql数据库环境：
+
+   [MySQL在CentOS7上的安装和配置，参考参考别人写的博客。](https://blog.csdn.net/qq_45363033/article/details/107011716)
+
+   [MySQL基础知识学习笔记，参考本人写的另一个博客。](https://blog.csdn.net/qq_44599368/article/details/127067092?spm=1001.2014.3001.5501)
+
+   [C++写的MySQL连接池，参考本人写的另一篇博客。](https://blog.csdn.net/qq_44599368/article/details/130630606?spm=1001.2014.3001.5501)
+
+5. 安装nginx：参考本文后续内容。
+
 # 项目编译和安装：
 ## 拉取项目到本地后，需要对源码进行修改：
 `MySQL.h`中，登录MySQL的信息，需要结合你本机的情况设定。
