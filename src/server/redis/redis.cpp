@@ -115,7 +115,7 @@ bool Redis::subscribe(int channel)
     // 只负责发送命令，不阻塞接收redis-server响应消息，否则会和notifyMsg线程抢占响应资源
     if (redisAppendCommand(this->_subcribe_context, "SUBSCRIBE %d", channel) == REDIS_ERR)
     {
-        cerr << "subscribe [" << channel << "] failure!";
+        cerr << "subscribe [" << channel << "] failure!" << endl;
         return false;
     }
  
@@ -125,7 +125,7 @@ bool Redis::subscribe(int channel)
     {
         if (redisBufferWrite(_subcribe_context, &done) == REDIS_ERR)
         {
-            cerr << "subscribe [" << channel << "] failure!";
+            cerr << "subscribe [" << channel << "] failure!" << endl;
             return false;
         } 
     } 
@@ -138,7 +138,7 @@ bool Redis::unsubscribe(int channel)
 {
     if (redisAppendCommand(this->_subcribe_context, "UNSUBSCRIBE %d", channel) == REDIS_ERR)
     {
-        cerr << "unsubscribe [" << channel << "] failure!";
+        cerr << "unsubscribe [" << channel << "] failure!" << endl;
         return false;
     }
 
@@ -148,11 +148,11 @@ bool Redis::unsubscribe(int channel)
     {
         if (redisBufferWrite(this->_subcribe_context, &done) == REDIS_ERR)
         {
-            cerr << "unsubscribe [" << channel << "] failure!";
+            cerr << "unsubscribe [" << channel << "] failure!" << endl;
             return false;
         }
     }
-    cout << "unsubscribe [" << channel << "] success!";
+    cout << "unsubscribe [" << channel << "] success!" << endl;
     return true;
 }
 
