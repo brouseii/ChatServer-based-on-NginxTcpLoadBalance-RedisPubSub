@@ -52,8 +52,45 @@ Json序列化和反序列化、muduo网络库开发、nginx（源码编译安装
 
 2. `redis.cpp`中`redis::connect()`函数中，登录`redis`的密码需要结合你本机的情况设定。
 
-3. 在chat数据库中，根据表结构创建各个业务需要的表。
+3. 在`chat`数据库中，根据表结构创建各个业务需要的表。
 ![image-20230726001544963](./pictures/image-20230726001544963.png)
+```mysql
+create database chat;
+use chat;
+
+create table User (
+    id INT PRIMARY KEY AUTO_INCREMENT, 
+    name VARCHAR(50) NOT NULL UNIQUE, 
+    password VARCHAR(50) NOT NULL, 
+    state ENUM('online', 'offline') DEFAULT 'offline'
+);
+
+create table Friend(
+    userid INT NOT NULL, 
+    friendid INT NOT NULL
+);
+# 添加联合主键：
+alter table Friend add PRIMARY KEY(userid, friendid);
+
+create table OfflineMessage(
+	userid INT NOT NULL, 
+	message VARCHAR(500) NOT NULL
+);
+
+create table AllGroup(
+    id INT PRIMARY KEY AUTO_INCREMENT, 
+    groupname VARCHAR(50) NOT NULL UNIQUE, 
+    groupdesc VARCHAR(200) DEFAULT ''
+);
+
+create table GroupUser(
+    groupid INT NOT NULL, 
+    userid INT NOT NULL, 
+    grouprole ENUM('creator', 'normal') DEFAULT 'normal'
+);
+# 添加联合主键：
+alter table GroupUser add PRIMARY KEY(groupid, userid);
+```
    
 ## 编译：
 
