@@ -45,7 +45,8 @@ su root
 
 ## 项目代码的运行：
 
-前提需要先启动`redis`和`nginx`服务器。
+前提需要先启动`redis`和`nginx`服务器，这里注意`nginx`和`redis`的配置文件修改。
+最重要的是`nginx`配置文件中，配置负载均衡的ChatServer服务器集群中各个服务器的入口地址`ip:port`和负载均衡算法中选择每台服务器的权重`weight`。
 
 ```shell
 redis-server /myredis/redis.conf
