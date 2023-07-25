@@ -23,7 +23,6 @@ using json = nlohmann::json;
 
 #define NAME_LEN 50
 #define PASSWORD_LEN 50
-#define NAME_LEN 50
 #define BUF_SIZE 1024
 
 /* 直接在程序中保存了当前登录用户的信息，不用再访问数据库获取！ */
@@ -159,10 +158,8 @@ int main(int argc, char** argv)
             case 1:     // login
             {            
                 int id = 0;
-                char username[NAME_LEN] = {0};
                 char password[PASSWORD_LEN] = {0};
-                //cout << "username:"; cin >> id; cin.get();  // 读掉缓冲区残留的回车`\n`
-                cout << "username:"; cin.getline(username, NAME_LEN);
+                cout << "userid:"; cin >> id; cin.get();  // 读掉缓冲区残留的回车`\n`
                 cout << "password:"; cin.getline(password, PASSWORD_LEN);
 
                 json js;
