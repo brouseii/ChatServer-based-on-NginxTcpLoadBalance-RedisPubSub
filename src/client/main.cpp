@@ -21,6 +21,7 @@ using json = nlohmann::json;
 #include "User.hpp"
 #include "public.h"
 
+#define NAME_LEN 50
 #define PASSWORD_LEN 50
 #define NAME_LEN 50
 #define BUF_SIZE 1024
@@ -158,8 +159,10 @@ int main(int argc, char** argv)
             case 1:     // login
             {            
                 int id = 0;
+                char username[NAME_LEN] = {0};
                 char password[PASSWORD_LEN] = {0};
-                cout << "userid:"; cin >> id; cin.get();  // 读掉缓冲区残留的回车`\n`
+                //cout << "username:"; cin >> id; cin.get();  // 读掉缓冲区残留的回车`\n`
+                cout << "username:"; cin.getline(username, NAME_LEN);
                 cout << "password:"; cin.getline(password, PASSWORD_LEN);
 
                 json js;
