@@ -1,0 +1,2 @@
+/home/learning_test_programm/CHAT/build/src/client/CMakeFiles/ChatClient.dir
+/home/learning_test_programm/CHAT/build/src/server/CMakeFiles/ChatServer.dir
