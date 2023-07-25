@@ -53,7 +53,7 @@ Json序列化和反序列化、muduo网络库开发、nginx（源码编译安装
 2. `redis.cpp`中`redis::connect()`函数中，登录`redis`的密码需要结合你本机的情况设定。
 
 3. 在`chat`数据库中，根据表结构创建各个业务需要的表。
-![image-20230726001544963](./pictures/image-20230726001544963.png)
+   ![image-20230726001544963](./pictures/image-20230726001544963.png)
 ```mysql
 create database chat;
 use chat;
