@@ -20,7 +20,7 @@ cmake ..
 make
 ```
 
-![](集群聊天项目.assets/project_compile.png)
+![](./pictures/project_compile.png)
 
 本项目，将上述操作写入了一个脚本文件`autobuild.sh`：
 
