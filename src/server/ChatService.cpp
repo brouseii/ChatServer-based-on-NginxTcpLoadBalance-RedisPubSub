@@ -9,7 +9,7 @@ ChatService* ChatService::instance()
     return &service;
 }
 
-// _msgHandlerMap中，保存<“注册消息”、“对应的Handler回调操作”>
+// _msgHandlerMap中，保存<“消息类型”、“对应的Handler回调操作”>
 ChatService::ChatService()
 { 
     // 用户基本业务管理相关事件处理回调注册
