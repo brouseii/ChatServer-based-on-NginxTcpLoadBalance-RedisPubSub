@@ -48,8 +48,13 @@ Json序列化和反序列化、muduo网络库开发、nginx（源码编译安装
 
 # 项目编译和安装、部署运行：
 ## 拉取项目到本地后，需要对源码进行修改：
-`MySQL.h`中，登录MySQL的信息，需要结合你本机的情况设定。
-`redis.cpp`中`redis::connect()`函数中，登录`redis`的密码需要结合你本机的情况设定。
+1. `MySQL.h`中，登录`MySQL`的信息，需要结合你本机的情况设定。
+
+2. `redis.cpp`中`redis::connect()`函数中，登录`redis`的密码需要结合你本机的情况设定。
+
+3. 在chat数据库中，根据表结构创建各个业务需要的表。
+![image-20230726001544963](./pictures/image-20230726001544963.png)
+   
 ## 编译：
 
 使用CMakeLists.txt文件，在Linux上简单和可重复的方式来构建C++项目。
@@ -92,7 +97,7 @@ su root
 ## 项目代码的运行：
 
 前提需要先启动`redis`和`nginx`服务器，这里注意`nginx`和`redis`的配置文件修改。
-最重要的是`nginx`配置文件中，配置负载均衡的ChatServer服务器集群中各个服务器的入口地址`ip:port`和负载均衡算法中选择每台服务器的权重`weight`。
+最重要的是`nginx`配置文件中，配置负载均衡的`ChatServer`服务器集群中各个服务器的入口地址`ip:port`和负载均衡算法中选择每台服务器的权重`weight`。
 本人在本项目中`/usr/local/nginx/conf/nginx.conf`的配置如下：
 ```shell
 # nginx tcp loadbalance config
