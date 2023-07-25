@@ -17,6 +17,9 @@ Json序列化和反序列化、muduo网络库开发、nginx（源码编译安装
 7. nginx配置tcp负载均衡
 8. redis支持的客户端跨服务器通信
 ![](./pictures/Cluster_redis_pub-sub.png)
+<p align="center">
+  <img src="./pictures/Cluster_redis_pub-sub.png" alt="image_description">
+</p>
 ## 项目目标：
 
 1. 掌握服务器的网络I/O模块，业务模块，数据模块分层的设计思想
