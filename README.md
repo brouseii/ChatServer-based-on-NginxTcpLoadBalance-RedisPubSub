@@ -82,7 +82,7 @@ cd /usr/local/nginx/sbin/
 # 查看redis和nginx、mysql是否已启动
 netstat -antp
 ```
-![image-20230724162827318](./pictures/image-20230724162827318.png)
+![image-20230725205426222](./pictures/image-20230725205426222.png)
 
 写了一个服务端`ChatServer.cpp`和客户端程序`ChatClient.cpp`，编译后会在`/bin`目录下生成两个可执行文件`ChatClient`和`ChatServer`，运行即可。
 ![image-20230724165625087](./pictures/image-20230724165625087.png)
