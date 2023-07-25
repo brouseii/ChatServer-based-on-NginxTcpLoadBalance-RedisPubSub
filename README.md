@@ -3,7 +3,9 @@ A cluster chat server based on Ngnix TCP load balancing and Redis publish subscr
 
 ![](./pictures/Cluster_redis_pub-sub.png)
 # 项目编译和安装：
-
+## 拉取项目到本地后，需要对源码进行修改：
+`MySQL.h`中，登录MySQL的信息，需要结合你本机的情况设定。
+`redis.cpp`中`redis::connect()`函数中，登录`redis`的密码需要结合你本机的情况设定。
 ## 编译：
 
 使用CMakeLists.txt文件，在Linux上简单和可重复的方式来构建C++项目。
@@ -84,6 +86,6 @@ netstat -antp
 ```
 ![image-20230725205426222](./pictures/image-20230725205426222.png)
 
-写了一个服务端`ChatServer.cpp`和客户端程序`ChatClient.cpp`，编译后会在`/bin`目录下生成两个可执行文件`ChatClient`和`ChatServer`，运行即可。
+写了一个服务端`ChatServer.cpp`和客户端程序`ChatClient.cpp`，编译后会在`/bin`目录下生成两个可执行文件`ChatClient`和`ChatServer`，按照`nginx`配置的`ChatServer`的IP和Port进行运行即可启动ChatServer。
 ![image-20230724165625087](./pictures/image-20230724165625087.png)
 
