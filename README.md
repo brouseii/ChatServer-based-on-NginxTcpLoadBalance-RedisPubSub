@@ -16,7 +16,6 @@ Json序列化和反序列化、muduo网络库开发、nginx（源码编译安装
 6. 离线消息
 7. nginx配置tcp负载均衡
 8. redis支持的客户端跨服务器通信
-![](./pictures/Cluster_redis_pub-sub.png)
 <p align="center">
   <img src="./pictures/Cluster_redis_pub-sub.png" alt="image_description">
 </p>
@@ -56,8 +55,10 @@ Json序列化和反序列化、muduo网络库开发、nginx（源码编译安装
 2. `redis.cpp`中`redis::connect()`函数中，登录`redis`的密码需要结合你本机的情况设定。
 
 3. 在`chat`数据库中，根据表结构创建各个业务需要的表。
-
-![image-20230726001544963](./pictures/image-20230726001544963.png)
+ 
+<p align="center">
+  <img src="./pictures/image-20230726001544963.png" alt="image_description">
+</p>
 
 ```mysql
 create database chat;
@@ -113,7 +114,9 @@ cmake ..
 make
 ```
 
-![](./pictures/project_compile.png)
+<p align="center">
+  <img src="./pictures/project_compile.png" alt="image_description">
+</p>
 
 本项目，将上述操作写入了一个脚本文件`autobuild.sh`：
 
@@ -174,8 +177,10 @@ cd /usr/local/nginx/sbin/
 
 # 查看redis和nginx、mysql是否已启动
 netstat -antp
-```
-![image-20230725205426222](./pictures/image-20230725205426222.png)
+``` 
+<p align="center">
+  <img src="./pictures/image-20230725205426222.png" alt="image_description">
+</p>
 
 写了一个服务端`ChatServer.cpp`和客户端程序`ChatClient.cpp`，编译后会在`/bin`目录下生成两个可执行文件`ChatClient`和`ChatServer`，按照`nginx`配置的`ChatServer`的`IP`和`Port`进行运行即可启动ChatServer。
 ![image-20230724165625087](./pictures/image-20230724165625087.png)
