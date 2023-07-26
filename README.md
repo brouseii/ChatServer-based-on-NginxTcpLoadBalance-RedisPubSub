@@ -1,5 +1,8 @@
 # ChatServer-based-on-NginxTcpLoadBalance-RedisPubSub
 A cluster chat server based on Ngnix TCP load balancing and Redis publish subscriptions.
+
+[CSDN详细的万字分析和说明。](https://blog.csdn.net/qq_44599368/article/details/131929941?spm=1001.2014.3001.5501)
+
 # 项目内容：
 
 ## 技术栈：
