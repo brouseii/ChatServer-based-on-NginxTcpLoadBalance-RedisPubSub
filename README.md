@@ -151,7 +151,7 @@ su root
 # nginx tcp loadbalance config
 stream {
     upstream MyServer {
-    	# nginx负载均衡器中，负载均衡算法需要更具weight权重来选择服务器
+    	# nginx负载均衡器中，负载均衡算法需要根据weight权重来选择服务器
         server 127.0.0.1:6000 weight=1 max_fails=3 fail_timeout=30s;
         server 127.0.0.1:6002 weight=1 max_fails=3 fail_timeout=30s;
     }
